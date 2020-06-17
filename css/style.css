@@ -1,0 +1,1450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', serif;
+}
+
+.container {
+    width: 86%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.active {
+    display: block !important;
+}
+
+.clickedColor {
+    color: #f34f3f !important;
+}
+
+.clickedBackground {
+    background-color: #f34f3f !important;
+    color: #fff !important;
+}
+
+/* Header and navbar styles start here */
+header {
+    font-size: 12px;
+    font-weight: 500;
+    height: 115px;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    background-color: #fff;
+}
+
+div#navBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+div#logo img {
+    width: 205px;
+    height: 25px;
+}
+
+div#navMenu {
+    height: 100%;
+    z-index: 9999999999999;
+}
+
+div#navMenu > ul {
+    list-style-type: none;
+    padding-left: 245px;
+    height: 100%;
+}
+
+div#navMenu > ul > li {
+    display: inline-block;
+    padding-right: 50px;
+    height: 100%;
+    padding-top: 49px;
+    position: relative;
+}
+
+div#navMenu > ul > li::after {
+    content: "";
+    display: block;
+    border-bottom: 1.2px solid #1b1b1b;
+    transition: .4s;
+    width: 0;
+}
+
+div#navMenu > ul > li:first-child::after {
+    content: "";
+    display: block;
+    border-bottom: 1.2px solid #1b1b1b;
+    transition: .4s;
+    width: 100%;
+}
+
+div#navMenu > ul > li:hover::after {
+    width: 100%;
+}
+
+div#navMenu ul a {
+    text-decoration: none;
+    color: #1b1b1b;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+li.menu > div {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    display: none;
+    z-index: 1000;
+    background-color: #fff;
+    width: 200%;
+}
+
+li.menu:hover > div {
+    display: block;
+}
+
+li.menu > div > ul {
+    margin: 20px 0;
+}
+
+li.menu ul {
+    list-style-type: none;
+}
+
+li.menu li {
+    padding: 10px 25px;
+}
+
+li.menu li a {
+    padding-right: 10px;
+}
+
+li.menu h2 {
+    padding: 10px 0 20px 25px;
+}
+
+li.menu > a {
+    text-transform: uppercase;
+}
+
+li.subMenu {
+    position: relative;
+}
+
+li.subMenu > div {
+    width: 230px;
+    position: absolute;
+    top: -15px;
+    left: 100%;
+    padding: 15px 15px;
+    display: none;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+li.subMenu:hover > div {
+    display: block;
+}
+
+li.subMenu > div a {
+    color: #737373;
+    font-weight: bold;
+}
+
+div#searchBar {
+    position: relative;
+    margin-left: 10px;
+}
+
+div#searchBar img:first-child {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    margin-right: 25px;
+}
+
+div#searchBar img:first-child:hover {
+    opacity: 0;
+}
+
+div#searchBar img:last-child {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin-right: 25px;
+}
+
+div#searchBar img:last-child:hover {
+    opacity: 1;
+    z-index: 100;
+    cursor: pointer;
+}
+
+div#basket {
+    position: relative;
+    margin-left: 20px;
+}
+
+#proBasket {
+    background-color: white;
+    position: absolute;
+    height: 400px;
+    width: 250px;
+    top: 20px;
+    right: -85px;
+    z-index: 10000000;
+    display: none;
+    padding: 70px 0;
+}
+
+#basket:hover #proBasket {
+    display: block;
+}
+
+div#basket img {
+    width: 22px;
+    height: 22px;
+    margin-right: 25px;
+}
+
+div#basket span {
+    font-size: 9px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #f34f3f;
+    padding: 3px;
+    border-radius: 50%;
+    line-height: 7px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-family: 'Montserrat', serif;
+}
+
+#proBasket .products {
+    padding: 20px 15px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#proBasket .proImg {
+    width: 70px;
+    height: 90px;
+}
+
+#proBasket .info p {
+    font-size: 15px;
+}
+
+#proBasket .info p:first-child {
+    color: #1b1b1b;
+}
+
+#proBasket .info p:last-child {
+    color: #6d6a6a;
+}
+
+#proBasket .remove img {
+    width: 9px;
+    height: 10px;
+}
+
+#proBasket .total {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#proBasket .total p {
+    font-weight: bold;
+}
+
+#proBasket .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#proBasket a:first-child {
+    background-color: #f34f3f;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#proBasket a:last-child {
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+div#cart a {
+    text-decoration: none;
+    color: #1b1b1b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div#menu {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    display: none;
+}
+
+/* Making responsive header */
+@media screen and (max-width: 1440px) {
+    div#navMenu > ul {
+        padding-left: 150px;
+    }
+    
+    div#navMenu > ul > li {
+        padding-right: 20px;
+    }
+    
+    div#searchBar > img:first-child {
+        margin-right: 15px;
+    }
+    
+    div#searchBar img:last-child {
+        margin-right: 15px;
+    }
+    
+    div#basket {
+        margin-left: 10px;
+    }
+    
+    div#basket img {
+        margin-right: 15px;
+    }    
+}
+
+@media screen and (max-width: 1080px) {
+    header div.container {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+    div#navMenu > ul {
+        padding-left: 50px;
+    }
+    
+    div#navMenu > ul > li {
+        padding-right: 10px;
+    }
+    
+    div#searchBar img:first-child {
+        margin-right: 10px;
+    }
+    
+    div#searchBar img:last-child {
+       margin-right: 10px;
+    }
+    
+    div#basket {
+        margin-left: 10px;
+    }
+    
+    div#basket img {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    div#navMenu {
+        display: none;
+    }
+    
+    div#searchBar {
+        display: none;
+    }
+    
+    div#basket {
+        display: none;
+    }
+
+    div#cart {
+        display: none;  
+    }
+
+    div#menu {
+        display: block;
+    }
+}
+/* Header and navbar styles end here */
+
+/* Clickable menu's styles start here */
+section#clickableMenu {
+    width: 400px;
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    z-index: 10000;
+    overflow: auto;
+    /* transform: translateX(400px); */
+}
+
+div#icon {
+    padding: 25px 0 25px 350px;
+}
+
+div#cMenu {
+    padding: 30px 0 30px 50px;
+}
+
+div#cMenu ul {
+    list-style-type: none;
+}
+
+div#cMenu li.menu {
+    padding-bottom: 20px;
+}
+
+div#cMenu a {
+    text-decoration: none;
+    color: #1b1b1b;
+    font-family: 'Montserrat', serif;
+    padding-right: 4px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+div#cMenu img {
+    width: 10px;
+    height: 11px;
+}
+
+div#cMenu li > ul {
+    padding-top: 20px;
+    margin-left: -25px;
+}
+
+div#cMenu li.menu > ul > li {
+    padding-bottom: 10px;
+}
+
+div#cMenu li.menu > ul a {
+    color: #6d6a6a;
+    font-size: 12px;
+    letter-spacing: 1.02px;
+    text-transform: uppercase;
+}
+
+div#cMenu li.subMenu > ul a {
+    color: #6d6a6a;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+div#cMenu li.menu > ul {
+    display: none;
+}
+
+div#cMenu li.subMenu > ul {
+    display: none;
+}
+/* Clickable menu's styles end here */
+
+/* First slider's styles start here */
+section#firstSlider {
+    background-color: #b5b0b0;
+    position: relative;
+}
+
+section#firstSlider img {
+    position: absolute;
+}
+
+section#firstSlider > img:nth-child(1) {
+    top: 200px;
+    left: 20px;
+    width: 45px;
+    z-index: 10;
+    opacity: 0.5;
+}
+
+section#firstSlider > img:nth-child(2) {
+    top: 200px;
+    right: 20px;
+    width: 45px;
+    z-index: 10;
+    opacity: 0.5;
+}
+
+div#leftSide {
+    display: inline-block;
+    position: absolute;
+    top: 75px;
+    left: 190px;
+    z-index: 10;
+}
+
+div#leftSide h1 {
+    font-size: 35px;
+    font-weight: 500;
+    width: 300px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+}
+
+div#leftSide p {
+    width: 420px;
+    line-height: 30px;
+    margin-top: 20px;
+    color: rgb(109, 106, 106);
+    font-family: 'Lora', serif;
+}
+
+div#leftSide img {
+    margin-top: 20px;
+}
+
+div#firstSliderImgs img {
+    width: 100%;
+    opacity: 0;
+}
+
+section#firstSlider .active {
+    opacity: 1 !important;
+}
+/* First slider's styles end here */
+
+/* Filter section's styles start here */
+section#filter {
+    margin-top: 580px;
+}
+
+div#categories {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+div#options ul {
+    list-style-type: none;
+    display: flex;
+}
+
+div#options ul li {
+    margin-right: 30px;
+}
+
+div#options ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 1.1px;;
+    color: #6d6a6a;
+}
+
+div#options ul li a:hover {
+    color: #f34f3f;
+}
+
+div#select span {
+    font-size: 17px;
+    letter-spacing: 1.1px;
+    line-height: 24px;
+    color: #6d6a6a;
+    margin-right: 10px;
+    position: relative;
+}
+
+div#select span img {
+    width: 10px;
+    height: 10px;
+}
+
+div#select span > div {
+    width: 450px;
+    display: none;
+    position: absolute;
+    right: -25px;
+    z-index: 100;
+    background-color: #fff;
+    padding: 40px 25px;
+}
+
+div#select span:hover {
+    cursor: pointer;
+}
+
+div#select span:hover div {
+    display: block;
+}
+
+div#select span ul {
+    list-style-type: none;
+}
+
+div#select span > div > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#select span > div > ul > li {
+    padding-right: 25px;
+    padding-top: 40px;
+}
+
+div#select span ul li a {
+    text-decoration: none;
+    color: #6d6a6a;
+    font-size: 12px;
+}
+
+div#select span ul li a:hover {
+    color: #000;
+}
+
+div#select h3 {
+    padding-bottom: 20px;
+}
+
+div#cards {
+    margin-bottom: 100px;
+}
+
+div#cards div.row {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+div#cards div.row div {
+    width: 280px;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+div#cards div img {
+    width: 100%;
+}
+
+div#cards div img:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s;
+}
+
+div#cards div.title {
+    padding-top: 10px;
+}
+
+div#cards div a {
+    color: #1b1b1b;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+div#cards div.title div {
+    overflow: hidden;
+}
+
+div#cards div p {
+    color: #afafaf;
+    font-size: 12px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+div#cards div p:first-child {
+    -webkit-transform: translateX(-220px);
+}
+
+div#cards div p:first-child:hover {
+    color: #f34f3f !important;
+    cursor: pointer;
+}
+
+div#cards div p:last-child {
+    margin-left: -90px;
+}
+
+div#sweetAlyssum {
+    position: relative;
+}
+
+h6#sold {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    background-color: #2b2b2b;
+    color: white !important;
+    padding: 5px 13px;
+    font-size: 14px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+
+div#scarletSage {
+    position: relative;
+}
+
+h6#sale {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    color: #2b2b2b !important;
+    background-color: white;
+    padding: 5px 13px;
+    font-size: 14px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+/* Filter section's styles end here */
+
+/* Video section's styles start here */
+section#video {
+    background-color: #f7f7f7;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+section#video div.container {
+    padding: 120px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#videoImg {
+    width: 600px;
+    height: 385px;
+    overflow: hidden;
+    position: relative;
+}
+
+div#videoImg a img {
+    width: 100%;
+}
+
+div#videoImg:hover a img {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+img#play {
+    position: absolute;
+    top: 150px;
+    left: 250px;
+    z-index: 10;
+    padding: 35px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+div#valentine {
+    margin-left: 50px;
+}
+
+div#valentine h1 {
+    color: #2b2b2b;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+div#valentine p {
+    color: #6d6a6a;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    margin-top: 20px;
+    line-height: 29px;
+}
+
+div#valentine ul {
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+div#valentine ul li {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+div#valentine ul li span {
+    background-color: #f34f3f;
+    color: white;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+div#valentine ul li::before {
+    content: url('../img/like.png');
+    display: inline-block;
+    margin-right: 10px;
+}
+/* Video section's styles end here */
+
+/* Flower experts' section's styles start here */
+section#flowerExperts {
+    margin: 150px 0 100px 0;
+}
+
+section#flowerExperts h2 {
+    margin-bottom: 19px;
+    font-size: 35px;
+    color: #2b2b2b;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: normal;
+}
+
+section#flowerExperts div.paragraph {
+    width: 38%;
+    margin-left: 31%;
+    margin-bottom: 20px;
+}
+
+section#flowerExperts div.paragraph p {
+    color: #6d6a6a;
+    margin-top: 14px;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    text-align: center;
+    line-height: 29px;
+}
+
+section#flowerExperts div.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+section#flowerExperts p#name {
+    color: #1b1b1b;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+section#flowerExperts p#profession {
+    color: #afafaf;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+/* Flower experts' section's styles end here */
+
+/* Subscribe section's styles start here */
+section#subscribe {
+    height: 500px;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    background-image: url("../img/background_img.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section#subscribe h3 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.4em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    margin-top: 150px;
+}
+
+section#subscribe form {
+    line-height: 60px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+section#subscribe form input[type="email"] {
+    width: 500px;
+    height: 60px;
+    line-height: 60px;
+    border: none;
+}
+
+section#subscribe form input[type="email"][placeholder] {
+    color: #959595;
+    padding-left: 20px;
+    font-family: 'Montserrat', serif;
+}
+
+section#subscribe form input[type="submit"] {
+    background-color: #f34f3f;
+    color: #fff;
+    border: none;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 42px;
+    margin-left: -5px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    font-family: 'Montserrat', serif;
+    text-transform: uppercase;
+}
+
+section#subscribe form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #f34f3f;
+}
+/* Subscribe section's styles end here */
+
+/* Blog section's styles start here */
+section#blog {
+    background-color: #f8f8f8;
+    padding: 100px 0;
+}
+
+section#blog h2 {
+    color: #2b2b2b;
+    font-size: 38px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.447em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+section#blog p {
+    font-size: 17px;
+    color: #6d6a6a;
+    font-family: 'Lora', serif;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+
+section#blog div.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+section#blog div.row > div {
+    width: 400px;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+section#blog p.date {
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+    color: #000000;
+    top: 10px;
+    left: 10px;
+    padding: 2px 15px;
+    font-size: 10px;
+    font-family: 'Montserrat', serif;
+}
+
+section#blog p.date:hover {
+    color: #f34f3f;
+    cursor: pointer;
+}
+
+section#blog div.top {
+    height: 250px;
+    overflow: hidden;
+}
+
+section#blog div.top img {
+    width: 100%;
+}
+
+section#blog div.top img:hover {
+    transform: scale(1.1);
+    transition: transform 0.4s;
+}
+
+section#blog div.title {
+    margin-top: 20px;
+}
+
+section#blog div.title a {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+section#blog div.title p {
+    font-size: 15px;
+    margin-top: 15px;
+    color: #6d6a6a;
+    font-family: 'Lora', serif;
+}
+/* Blog section's styles end here */
+
+/* Second slider's styles start here */
+section#secondSlider {
+    height: 500px;
+    background-color: #fff;
+}
+
+section#secondSlider div.container {
+    position: relative;
+}
+
+section#secondSlider img.left {
+    width: 50px;
+    height: 42px;
+    position: absolute;
+    top: 45%;
+    left: 50px;
+    z-index: 10;
+}
+
+section#secondSlider img.right {
+    width: 50px;
+    height: 42px;
+    position: absolute;
+    top: 45%;
+    right: 50px;
+    z-index: 10;
+}
+
+section#secondSlider div.images {
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    overflow: hidden;
+}
+
+section#secondSlider div.main {
+    width: 200%;
+    height: 100%;
+}
+
+section#secondSlider div.main > div {
+    display: inline-block;
+    float: left;
+    z-index: 20;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+section#secondSlider div.main div p {
+    color: #4b4747;
+    font-size: 24px;
+    font-family: 'Lora', serif;
+    margin-top: 30px;
+    line-height: 1.5em;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+section#secondSlider span.name {
+    color: #1b1b1b;
+    font-size: 14px;
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+section#secondSlider span.profession {
+    color: #afafaf;
+    font-size: 12px;
+    font-family: 'Montserrat', serif;
+    display: block;
+    margin-top: 10px;
+    letter-spacing: 1.5px;
+}
+/* Second slider's styles end here */
+
+/* Third slider's styles starts here */
+section#thirdSlider {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+section#thirdSlider > div {
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+}
+
+section#thirdSlider img.main {
+    width: 100%;
+}
+
+section#thirdSlider img.insta {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 80px;
+    left: 45%;
+    z-index: 10;
+    visibility: hidden;
+}
+
+section#thirdSlider div.item:hover img.main {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+section#thirdSlider div.item:hover img.insta {
+    visibility: visible;
+    transition: visibility 0.3s;
+}
+
+section#thirdSlider div.logo{
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    top: calc(50% - 20px);
+    left: calc(50% - 75px);
+    z-index: 100;
+}
+
+section#thirdSlider div.logo p {
+    font-size: 14px;
+    color: #2d2b2b;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 11px 22px;
+    letter-spacing: 1.5px;
+    font-family: 'Montserrat', serif;
+}
+/* Third slider's styles ends here */
+
+/* Footer styles start here */
+footer {
+    background-color: #fefaf3;
+    padding-top: 50px;
+}
+
+footer div.contact {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+
+footer div.contact div {
+    width: 25%;
+}
+
+footer div.contact h6 {
+    font-size: 12px;
+    font-family: 'Montserrat', serif;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+footer div.contact ul {
+    list-style-type: none;
+}
+
+footer div.contact li {
+    margin-bottom: 10px;
+}
+
+footer div.contact a {
+    text-decoration: none;
+    color: #8b8b8b;
+    font-size: 12px;
+    font-family: 'Montserrat', serif;
+}
+
+footer div.contact a:hover {
+    color: #f34f3f;
+}
+
+/* Horizontal line style goes here */
+footer hr {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+footer div.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+footer div.copyright p {
+    color: #afafaf;
+    font-size: 12px;
+    font-family: 'Montserrat', serif;
+}
+
+footer div.copyright span {
+    color: #6d6a6a;
+    font-size: 12px;
+    font-family: 'Montserrat', serif;
+}
+
+footer div.copyright a {
+    text-decoration: none;
+    color: #afafaf;
+    font-family: 'Montserrat', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    word-spacing: 30px;
+}
+/* Footer styles end here */
+
+/* Accordion page's styles start here */
+div#accordions {
+    background-color: #fafaf9;
+    height: 225px;
+}
+
+div#accordions div.container {
+    display: flex;
+    align-items: center;
+}
+
+div#accordions h1 {
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    color: #0e0e0e;
+    line-height: 1.32em;
+    font-weight: 400;
+}
+
+div#topAccordion {
+    padding: 100px 0;
+}
+
+div#topAccordion div.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+div#topAccordion div.container div {
+    width: 600px;
+}
+
+div#topAccordion h6 {
+    background-color: #fff;
+    color: #1b1b1b;
+    font-size: 20px;
+    letter-spacing: 1.15px;
+    font-family: 'Montserrat', serif;
+    border: 1px solid #eee;
+    padding: 15px 40px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+div#topAccordion h6:hover {
+    background-color: #f34f3f;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+div#topAccordion span {
+    position: absolute;
+    left: 20px;
+}
+
+div#topAccordion span#plus {
+    visibility: visible;
+}
+
+div#topAccordion span#minus {
+    visibility: hidden;
+}
+
+div#topAccordion h6:hover span#plus {
+    visibility: hidden;
+}
+
+div#topAccordion h6:hover span#minus {
+    visibility: visible;
+}
+
+div#topAccordion div.container div > div {
+    font-size: 15px;
+    font-family: 'Lora', serif;
+    color: #6d6a6a;
+    padding: 25px 0;
+    letter-spacing: 1.2px;
+    display: none;
+}
+
+div#topAccordion .clickedBackground span#plus {
+    visibility: hidden;
+}
+
+div#topAccordion .clickedBackground span#minus {
+    visibility: visible;
+}
+
+div#bottomAccordion {
+    padding: 100px 0;
+}
+
+div#bottomAccordion div.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+div#bottomAccordion div.container div {
+    width: 600px;
+}
+
+div#bottomAccordion h6 {
+    background-color: #fff;
+    color: #1b1b1b;
+    font-size: 20px;
+    letter-spacing: 1.15px;
+    font-family: 'Montserrat', serif;
+    border-bottom: 1px solid #eee;
+    padding: 15px 40px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+div#bottomAccordion h6:hover {
+    color: #f34f3f;
+    cursor: pointer;
+}
+
+div#bottomAccordion span {
+    position: absolute;
+    left: 20px;
+}
+
+div#bottomAccordion span#plus {
+    visibility: visible;
+}
+
+div#bottomAccordion span#minus {
+    visibility: hidden;
+}
+
+div#bottomAccordion h6:hover span#plus {
+    visibility: hidden;
+}
+
+div#bottomAccordion h6:hover span#minus {
+    visibility: visible;
+}
+
+div#bottomAccordion div.container div > div {
+    font-size: 15px;
+    font-family: 'Lora', serif;
+    color: #6d6a6a;
+    padding: 25px 0;
+    letter-spacing: 1.2px;
+    display: none;
+}
+
+div#bottomAccordion .clickedColor span#plus {
+    visibility: hidden;
+}
+
+div#bottomAccordion .clickedColor span#minus {
+    visibility: visible;
+}
+
+/* Making accordions responsive */
+@media screen and (max-width: 1260px) {
+    div#topAccordion div.container div {
+        width: 100%;
+        padding-right: 20px;
+    }
+    div#bottomAccordion div.container div {
+        width: 100%;
+        padding-right: 20px;
+    }
+}
+/* Accordion page's styles end here */
+
+/* Cart page's styles start here */
+section#cartPage {
+    background-color: #fafaf9;
+    height: 225px;
+}
+
+section#cartPage > div.container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+section#cartPage h1 {
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    color: #0e0e0e;
+    line-height: 1.32em;
+    font-weight: 400;
+    width: 100%;
+}
+
+section#cartPage p {
+    font-size: 17px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: #6d6a6a;
+    width: 100%;
+}
+
+div#productTable {
+    width: 100%;
+    height: 100%;
+}
+
+div#productTable > table {
+    width: 100%;
+}
+
+div#productTable > table tr {
+    text-align: center;
+}
+
+div#productTable > table td {
+    padding: 20px 0;
+}
+
+div#productTable > table img {
+    width: 150px;
+}
+/* Cart page's styles end here */
